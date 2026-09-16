@@ -150,6 +150,19 @@
     }
     html += '</div>';
 
+    /*
+     * 阅读原文（英语阅读题专用）。
+     * 放在题干**之前** —— 阅读题必须"先读文章再做题"。
+     * 用原生 <details> 折叠：默认收起，列表里不会被大段英文淹没，
+     * 需要时点开；不需要任何 JS，考试模式下也不影响作答。
+     */
+    if (q.passage) {
+      html += '<details class="q-passage">' +
+        '<summary>📄 阅读原文（点开查看）</summary>' +
+        '<div class="q-passage-body">' + esc(q.passage).replace(/\n+/g, '<br>') + '</div>' +
+        '</details>';
+    }
+
     /* 题干 */
     html += '<div class="q-stem">' + U.renderStem(q) + '</div>';
 

@@ -1665,6 +1665,50 @@ body.auth-locked .update-banner { display: none !important; }
   margin: 8px 0;
 }
 
+/* ==================================================================== */
+/* 阅读原文（英语阅读题）                                                */
+/* ==================================================================== */
+
+.q-passage {
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--brand);
+  border-radius: 7px;
+  background: var(--bg-2, #fafafa);
+  margin-bottom: 12px;
+}
+.q-passage > summary {
+  cursor: pointer;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--brand);
+  user-select: none;
+  list-style: none;
+}
+.q-passage > summary::-webkit-details-marker { display: none; }
+.q-passage > summary::before {
+  content: '▸ ';
+  display: inline-block;
+  transition: transform .15s;
+}
+.q-passage[open] > summary::before { content: '▾ '; }
+.q-passage > summary:hover { background: rgba(0, 0, 0, .03); }
+
+.q-passage-body {
+  padding: 4px 14px 14px;
+  font-size: 13.5px;
+  line-height: 1.85;
+  color: var(--text-2);
+  max-height: 460px;
+  overflow-y: auto;
+  border-top: 1px solid var(--border);
+  white-space: normal;
+}
+
+@media print {
+  .q-passage-body { max-height: none; overflow: visible; }
+}
+
 @media print {
   .katex-display { overflow: visible; }
 }
