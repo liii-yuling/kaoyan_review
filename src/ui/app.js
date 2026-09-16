@@ -167,11 +167,17 @@
     KY.bus.on('route:after', function () {
       refreshNavBadges();
       refreshBankStatus();
+      /* 公式渲染：路由切完后把当前视图里的 $...$ 排版出来。
+         视图内部重绘（预览、切标签）由 math.js 的 MutationObserver 兜住。 */
+      if (KY.math && KY.math.render) KY.math.render();
     });
 
     // 5. 路由
     registerRoutes();
     KY.router.start();
+
+    // 5b. 公式渲染：挂在 #view 上，兜住视图内部的重绘
+    if (KY.math && KY.math.startObserver) KY.math.startObserver();
 
     // 6. 检查有没有新版本（离线 / file:// 打开时静默跳过）
     if (KY.update && KY.update.autoCheck) KY.update.autoCheck();

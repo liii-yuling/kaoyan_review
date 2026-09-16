@@ -1433,8 +1433,7 @@ body.auth-locked .update-banner { display: none !important; }
   .res-player iframe { height: 230px; }
 }
 
-/* 运营台：二维码识别预览 */
-.qr-rows { display: flex; flex-direction: column; gap: 8px; }
+/* 运营台：二维码识别预览 */.qr-rows { display: flex; flex-direction: column; gap: 8px; }
 .qr-row {
   border: 1px solid var(--border);
   border-radius: 7px;
@@ -1626,4 +1625,46 @@ body.auth-locked .update-banner { display: none !important; }
 @media print {
   .sidebar, .topbar, .exam-bar, .btn, .update-banner, .gate-mask, .con-tabs { display: none !important; }
   .con-tab { display: block !important; }
+}
+
+/* ==================================================================== */
+/* 数学公式（KaTeX）                                                     */
+/*                                                                      */
+/* KaTeX 自带的 katex.min.css 由 math.js 从 CDN 加载，这里只做适配：     */
+/* 字体大小跟随正文、超长公式可以横向滚动而不是撑破卡片。               */
+/* ==================================================================== */
+
+.katex { font-size: 1.06em; }
+
+/* 行间公式：块级居中，太宽时可以横向滚 */
+.katex-display {
+  margin: 10px 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 2px 0;
+}
+.katex-display > .katex { white-space: normal; }
+
+/* 题干/选项里的公式不要因为行距被裁掉上下标 */
+.q-stem .katex, .opt-item .katex, .explain .katex { line-height: 1.3; }
+
+/* 渲染失败的公式：KaTeX 会用 errorColor 标红，这里给个提示底色 */
+.katex-error {
+  background: var(--err-soft);
+  border-radius: 3px;
+  padding: 0 3px;
+}
+
+/* 公式引擎没加载出来时（离线）的提示条 */
+.math-offline-hint {
+  font-size: 12.5px;
+  color: var(--warn);
+  background: var(--warn-soft);
+  border-radius: 5px;
+  padding: 6px 10px;
+  margin: 8px 0;
+}
+
+@media print {
+  .katex-display { overflow: visible; }
 }
