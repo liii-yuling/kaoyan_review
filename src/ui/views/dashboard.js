@@ -203,6 +203,17 @@
       '</div>' +
       '</div>' +
 
+      /* 写给她的一句话：每次刷新随机换，同一次浏览里不变 */
+      (function () {
+        if (!KY.love || !KY.love.pick()) return '';
+        var line = KY.love.pick();
+        var sign = KY.love.sign();
+        return '<div class="love-note">' +
+          '<div class="love-quote">' + esc(line) + '</div>' +
+          (sign ? '<div class="love-sign">' + esc(sign) + '</div>' : '') +
+          '</div>';
+      })() +
+
       '<div class="grid grid-4" style="margin-bottom:18px">' +
       countdownHtml +
       ui.stat(stats.total, '题库总题量（真题 ' + stats.realCount +

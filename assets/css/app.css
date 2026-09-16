@@ -1709,6 +1709,58 @@ body.auth-locked .update-banner { display: none !important; }
   .q-passage-body { max-height: none; overflow: visible; }
 }
 
+/* ==================================================================== */
+/* 首页那句写给她的话                                                    */
+/* ==================================================================== */
+
+.love-note {
+  position: relative;
+  margin: 0 0 18px;
+  padding: 18px 22px 16px 26px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #fff6f7 0%, #fdf0f4 55%, #fbf3ff 100%);
+  border: 1px solid #f6dfe6;
+  box-shadow: 0 1px 3px rgba(200, 120, 150, .07);
+}
+/* 左侧一道细细的粉色竖线，代替引号图形 */
+.love-note::before {
+  content: '';
+  position: absolute;
+  left: 12px;
+  top: 16px;
+  bottom: 16px;
+  width: 3px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #f3a8bd, #d9a7e6);
+}
+.love-quote {
+  font-size: 15.5px;
+  line-height: 1.95;
+  color: #8a4a5e;
+  letter-spacing: .2px;
+  font-weight: 500;
+}
+.love-sign {
+  margin-top: 8px;
+  font-size: 12.5px;
+  color: #b98da0;
+  text-align: right;
+}
+
+/* 深色模式下也保持柔和，不要刺眼 */
+@media (prefers-color-scheme: dark) {
+  .love-note {
+    background: linear-gradient(135deg, #2c2328 0%, #2a2230 100%);
+    border-color: #45323b;
+  }
+  .love-quote { color: #e7c3d1; }
+  .love-sign { color: #a98a99; }
+}
+
+@media print {
+  .love-note { break-inside: avoid; }
+}
+
 @media print {
   .katex-display { overflow: visible; }
 }
