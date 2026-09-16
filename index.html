@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>考研定制化复习</title>
+<link rel="stylesheet" href="assets/css/app.css?v=20260917-001100">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+<meta name="build" content="20260917-001100">
+<meta name="built-at" content="2026-09-17 00:11:00">
+</head>
+<body>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="brand">
+      <h1>考研定制化复习</h1>
+      <div class="sub" id="brand-sub">英语一 · 数学一 · 信号与系统 · 政治</div>
+    </div>
+
+    <nav class="nav">
+      <div class="nav-group-title">学习</div>
+      <a href="#/plan" data-nav="plan"><span class="ico">☑</span>今日计划<span class="badge" id="nav-plan-badge">0</span></a>
+      <a href="#/resources" data-nav="resources"><span class="ico">▦</span>资料库</a>
+      <a href="#/dashboard" data-nav="dashboard"><span class="ico">◉</span>总览</a>
+      <a href="#/review" data-nav="review"><span class="ico">◎</span>定制化推送</a>
+      <a href="#/wrongbook" data-nav="wrongbook"><span class="ico">✎</span>错题本<span class="badge" id="nav-wrong-count">0</span></a>
+      <a href="#/progress" data-nav="progress"><span class="ico">◫</span>掌握度报告</a>
+
+      <div class="nav-group-title">科目</div>
+      <a href="#/subject/english1" data-nav="subject-english1"><span class="ico">英</span>英语一</a>
+      <a href="#/subject/math1" data-nav="subject-math1"><span class="ico">数</span>数学一</a>
+      <a href="#/subject/signals" data-nav="subject-signals"><span class="ico">信</span>信号与系统</a>
+      <a href="#/subject/politics" data-nav="subject-politics"><span class="ico">政</span>政治</a>
+
+      <div class="nav-group-title">真题与考试</div>
+      <a href="#/papers" data-nav="papers"><span class="ico">▤</span>历年真题（英语一）</a>
+      <a href="#/exam" data-nav="exam"><span class="ico">⏱</span>考试模式</a>
+      <a href="#/bank" data-nav="bank"><span class="ico">⌕</span>题库检索</a>
+      <a href="#/import" data-nav="import"><span class="ico">⬆</span>题库导入</a>
+
+      <div class="nav-group-title">系统</div>
+      <a href="#/console" data-nav="console"><span class="ico">★</span>运营台（你用的）</a>
+      <a href="#/settings" data-nav="settings"><span class="ico">⚙</span>设置与备份</a>
+      <a href="#/help" data-nav="help"><span class="ico">?</span>使用说明</a>
+    </nav>
+
+    <div class="sidebar-foot">
+      <div id="storage-status"><span class="dot dot-ok"></span>本地存储正常</div>
+      <div style="margin-top:4px" id="bank-status">题库加载中…</div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <h2 id="page-title">总览</h2>
+      <span class="spacer"></span>
+      <span id="topbar-user" class="tag"></span>
+      <a class="btn btn-sm" href="#/settings">设置</a>
+    </header>
+    <main class="view" id="view"></main>
+  </div>
+</div>
+
+<!-- ===================== 核心层 ===================== -->
+<script src="src/version.js?v=20260917-001100"></script>
+<script src="src/core/util.js?v=20260917-001100"></script>
+<script src="src/core/bus.js?v=20260917-001100"></script>
+<script src="src/core/store.js?v=20260917-001100"></script>
+<script src="src/core/router.js?v=20260917-001100"></script>
+
+<!-- ===================== 数据层 ===================== -->
+<script src="src/data/taxonomy.js?v=20260917-001100"></script>
+<script src="src/data/bank.english1.js?v=20260917-001100"></script>
+<script src="src/data/bank.math1.js?v=20260917-001100"></script>
+<script src="src/data/bank.signals.js?v=20260917-001100"></script>
+<script src="src/data/bank.politics.js?v=20260917-001100"></script>
+<script src="src/data/bank.shared.js?v=20260917-001100"></script>
+<script src="src/data/plan.shared.js?v=20260917-001100"></script>
+<script src="src/data/push.shared.js?v=20260917-001100"></script>
+<script src="src/data/resources.shared.js?v=20260917-001100"></script>
+<script src="src/data/auth.shared.js?v=20260917-001100"></script>
+<script src="src/data/papers.shared.js?v=20260917-001100"></script>
+<script src="src/core/bank.js?v=20260917-001100"></script>
+
+<!-- ===================== 服务层 ===================== -->
+<script src="src/services/video.js?v=20260917-001100"></script>
+<script src="src/services/classifier.js?v=20260917-001100"></script>
+<script src="src/services/recommender.js?v=20260917-001100"></script>
+<script src="src/services/grader.js?v=20260917-001100"></script>
+<script src="src/services/ocr.js?v=20260917-001100"></script>
+<script src="src/services/ai.js?v=20260917-001100"></script>
+<script src="src/services/importer.js?v=20260917-001100"></script>
+<script src="src/services/plan.js?v=20260917-001100"></script>
+<script src="src/services/push.js?v=20260917-001100"></script>
+<script src="src/services/resources.js?v=20260917-001100"></script>
+<script src="src/services/papertext.js?v=20260917-001100"></script>
+<script src="src/services/pdf.js?v=20260917-001100"></script>
+<script src="src/services/qr.js?v=20260917-001100"></script>
+<script src="src/services/update.js?v=20260917-001100"></script>
+<script src="src/services/auth.js?v=20260917-001100"></script>
+
+<!-- ===================== UI 层 ===================== -->
+<script src="src/ui/components.js?v=20260917-001100"></script>
+<script src="src/ui/views/dashboard.js?v=20260917-001100"></script>
+<script src="src/ui/views/plan.js?v=20260917-001100"></script>
+<script src="src/ui/views/resources.js?v=20260917-001100"></script>
+<script src="src/ui/views/wrongbook.js?v=20260917-001100"></script>
+<script src="src/ui/views/review.js?v=20260917-001100"></script>
+<script src="src/ui/views/subject.js?v=20260917-001100"></script>
+<script src="src/ui/views/papers.js?v=20260917-001100"></script>
+<script src="src/ui/views/exam.js?v=20260917-001100"></script>
+<script src="src/ui/views/bank.js?v=20260917-001100"></script>
+<script src="src/ui/views/import.js?v=20260917-001100"></script>
+<script src="src/ui/views/progress.js?v=20260917-001100"></script>
+<script src="src/ui/views/settings.js?v=20260917-001100"></script>
+<script src="src/ui/views/console.js?v=20260917-001100"></script>
+<script src="src/ui/views/help.js?v=20260917-001100"></script>
+
+<!-- ===================== 启动 ===================== -->
+<script src="src/ui/app.js?v=20260917-001100"></script>
+</body>
+</html>
