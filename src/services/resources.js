@@ -104,6 +104,8 @@
      否则标题里出现"章节"两个字就会被误当成字段。 */
   var CHAPTER_SEG_RE = /^(?:章节|章|chapter)\s*[:：]\s*(.+)$/i;
   var POINTS_SEG_RE = /^(?:知识点|考点|重点|points?)\s*[:：]\s*(.+)$/i;
+  /* 模块归属：模块: 马原  /  模块: pol.m.marx */
+  var MODULE_SEG_RE = /^(?:模块|所属模块|module)\s*[:：]\s*(.+)$/i;
 
   function parseDuration(text) {
     var hm = text.match(DUR_HOUR_RE);
@@ -172,6 +174,7 @@
       var duration = null;
       var chapter = '';
       var points = [];
+      var moduleRaw = '';
 
       segs.forEach(function (seg, idx) {
         if (seg.indexOf('\u0001') >= 0) {
@@ -185,9 +188,11 @@
           }
           return;
         }
-        /* 章节 / 知识点字段（二维码视频导出时会带上） */
+        /* 章节 / 模块 / 知识点字段（视频课条目会带上） */
         var chm = seg.match(CHAPTER_SEG_RE);
         if (chm && !chapter) { chapter = chm[1].trim(); return; }
+        var mdm = seg.match(MODULE_SEG_RE);
+        if (mdm && !moduleRaw) { moduleRaw = mdm[1].trim(); return; }
         var ptm = seg.match(POINTS_SEG_RE);
         if (ptm && !points.length) {
           points = ptm[1].split(/[、,，;；\/]+/).map(function (x) { return x.trim(); })
@@ -228,11 +233,22 @@
       }
 
       seq++;
+      var itemSubject = curSubject || KY.importer.subjectFromText(title) || '';
+
+      /*
+       * 模块归属：
+       *   1. 写了「模块: xxx」就按写的来；
+       *   2. 没写就按标题+备注里的考点关键词/模块简称自动认。
+       * 认不出就留空，不硬塞 —— 分错组比不分更让人困惑。
+       */
+      var mod = moduleRaw ? resolveModule(moduleRaw, itemSubject) : null;
+      if (!mod) mod = inferModule([title, noteParts.join(' ')].join(' '), itemSubject);
+
       items.push({
         id: 'r' + (U.hashString(U.normalizeText(title) + '#' + seq) % 1000000).toString(36),
         kind: kind,
         title: title,
-        subject: curSubject || KY.importer.subjectFromText(title) || '',
+        subject: itemSubject,
         url: url,
         code: code,
         provider: provider,
@@ -241,7 +257,9 @@
         note: noteParts.join(' · '),
         tags: [],
         chapter: chapter,
-        points: points
+        points: points,
+        module: mod ? mod.id : '',
+        moduleName: mod ? mod.name : ''
       });
     });
     /* id 去重 */
@@ -419,6 +437,107 @@
       return a.name.localeCompare(b.name, 'zh');
     });
     return hits.slice(0, limit || 5);
+  }
+
+  /* ================================================================== */
+  /* 模块归属（"把视频放到政治的对应模块下面"靠它）                        */
+  /* ================================================================== */
+
+  /*
+   * 模块简称对照表。
+   * 视频标题里写的是"马原""毛中特""史纲"这种简称，
+   * 而 taxonomy 里是全称，对不上就分不了组。
+   */
+  var MODULE_ALIASES = {
+    politics: {
+      '马原': 'pol.m.marx', '马克思主义': 'pol.m.marx', '马哲': 'pol.m.marx',
+      '政治经济学': 'pol.m.marx', '科社': 'pol.m.marx',
+      '毛中特': 'pol.m.mao', '毛概': 'pol.m.mao', '毛泽东思想': 'pol.m.mao',
+      '中特': 'pol.m.mao', '习思想': 'pol.m.mao', '新时代': 'pol.m.mao',
+      '史纲': 'pol.m.history', '近现代史': 'pol.m.history', '近代史': 'pol.m.history',
+      '党史': 'pol.m.history',
+      '思修': 'pol.m.ethics', '思想道德': 'pol.m.ethics', '道德与法治': 'pol.m.ethics',
+      '法律基础': 'pol.m.ethics',
+      '时政': 'pol.m.current', '形势与政策': 'pol.m.current', '当代': 'pol.m.current',
+      '世界经济与政治': 'pol.m.current'
+    },
+    math1: {
+      '高数': 'm1.m.limit', '极限': 'm1.m.limit', '导数': 'm1.m.deriv',
+      '积分': 'm1.m.integral', '级数': 'm1.m.series', '微分方程': 'm1.m.ode',
+      '线代': 'm1.m.linalg', '线性代数': 'm1.m.linalg', '概率': 'm1.m.prob'
+    },
+    english1: {
+      '完形': 'e1.m.cloze', '阅读': 'e1.m.reading', '写作': 'e1.m.writing',
+      '翻译': 'e1.m.translation', '新题型': 'e1.m.newtype'
+    }
+  };
+
+  function moduleById(id) {
+    var node = KY.getTaxNode(id);
+    if (node && node.module) return { id: node.module.id, name: node.module.name };
+    /* 传进来的可能本身就是模块 id 而不是考点 id */
+    var subs = KY.SUBJECTS;
+    for (var i = 0; i < subs.length; i++) {
+      var mods = KY.getModules(subs[i]) || [];
+      for (var j = 0; j < mods.length; j++) {
+        if (mods[j].id === id) return { id: mods[j].id, name: mods[j].name };
+      }
+    }
+    return null;
+  }
+
+  /**
+   * 把"马原" / "马克思主义基本原理" / "pol.m.marx" 统一解析成模块。
+   * 认不出返回 null —— 不硬塞一个默认模块。
+   */
+  function resolveModule(value, subject) {
+    var v = U.normalizeText(value);
+    if (!v) return null;
+
+    var direct = moduleById(String(value || '').trim());
+    if (direct) return direct;
+
+    var subs = subject ? [subject] : KY.SUBJECTS;
+    for (var i = 0; i < subs.length; i++) {
+      var sub = subs[i];
+      var mods = KY.getModules(sub) || [];
+      for (var j = 0; j < mods.length; j++) {
+        var n = U.normalizeText(mods[j].name);
+        if (n === v || n.indexOf(v) >= 0) return { id: mods[j].id, name: mods[j].name };
+      }
+      var al = MODULE_ALIASES[sub] || {};
+      var keys = Object.keys(al);
+      for (var k = 0; k < keys.length; k++) {
+        if (U.normalizeText(keys[k]) === v) return moduleById(al[keys[k]]);
+      }
+    }
+    return null;
+  }
+
+  /**
+   * 从一段文字里猜模块。
+   * 先用考点关键词撞（撞上了模块自然就出来了），再用简称/全称兜底。
+   */
+  function inferModule(text, subject) {
+    var s = String(text || '');
+    if (!s.trim()) return null;
+
+    var hits = inferPoints(s, subject, 1);
+    if (hits.length && hits[0].moduleId) {
+      return { id: hits[0].moduleId, name: hits[0].module || '' };
+    }
+    var subs = subject ? [subject] : KY.SUBJECTS;
+    for (var i = 0; i < subs.length; i++) {
+      var al = MODULE_ALIASES[subs[i]] || {};
+      var keys = Object.keys(al);
+      for (var k = 0; k < keys.length; k++) {
+        if (s.indexOf(keys[k]) >= 0) {
+          var m = moduleById(al[keys[k]]);
+          if (m) return m;
+        }
+      }
+    }
+    return null;
   }
 
   /**
@@ -621,6 +740,9 @@
     summary: summary,
     copyText: copyText,
     inferPoints: inferPoints,
+    resolveModule: resolveModule,
+    inferModule: inferModule,
+    MODULE_ALIASES: MODULE_ALIASES,
     buildQrItems: buildQrItems,
     qrItemToText: qrItemToText,
     pointNames: pointNames,

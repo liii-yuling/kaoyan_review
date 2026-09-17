@@ -79,6 +79,33 @@
     return html;
   }
 
+  /**
+   * 把一组条目按"模块"再分一层。
+   * 没有模块信息的条目排最后，归到「其他」。
+   * 顺序按 taxonomy 里模块的先后（马原→毛中特→史纲→思修→时政）。
+   */
+  function splitByModule(items, subject) {
+    var map = Object.create(null);
+    items.forEach(function (it) {
+      var k = it.module || '';
+      (map[k] || (map[k] = [])).push(it);
+    });
+
+    var order = (KY.getModules(subject) || []).map(function (m) { return m.id; });
+    var keys = order.filter(function (id) { return map[id]; });
+    var extra = Object.keys(map).filter(function (k) { return k && order.indexOf(k) < 0; });
+    keys = keys.concat(extra);
+    if (map['']) keys.push('');
+
+    return keys.map(function (k) {
+      return {
+        module: k,
+        name: k ? ((map[k][0] && map[k][0].moduleName) || k) : '其他',
+        items: map[k]
+      };
+    });
+  }
+
   /* ================================================================== */
 
   KY.views.resources = function (ctx, mount) {
@@ -162,7 +189,17 @@
           (gSum.min ? ' · 视频/音频总时长约 ' + Math.round(gSum.min / 60 * 10) / 10 + ' 小时' : '') +
           '</p></div>' +
           '</div>' +
-          g.items.map(itemHtml).join('') +
+          /* 有模块信息就按模块再分一层（政治视频课就是靠这个归到马原/毛中特/史纲…下面） */
+          splitByModule(g.items, g.subject).map(function (mg) {
+            if (!mg.module) return mg.items.map(itemHtml).join('');
+            return '<div class="res-module">' +
+              '<div class="res-module-head">' +
+              '<span class="res-module-name">' + esc(mg.name) + '</span>' +
+              '<span class="res-module-count">' + mg.items.length + ' 条</span>' +
+              '</div>' +
+              mg.items.map(itemHtml).join('') +
+              '</div>';
+          }).join('') +
           '</div>';
       }).join('')
       : ui.empty('没有符合条件的资料', '试试切换科目或类型，或者清空搜索词。',

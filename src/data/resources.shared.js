@@ -2,8 +2,8 @@
  * resources.shared.js —— 共享资料库（运营者维护，使用者查看）
  *
  * 本文件由「运营台 → 资料库 → 导出资料库文件」自动生成。
- * 生成时间：2026-09-17 08:16:40
- * 条目数量：82（视频 81 · 文档 1）
+ * 生成时间：2026-09-17 08:43:15
+ * 条目数量：91（视频 90 · 文档 1）
  *
  * 这里放的是**网盘链接入口**，不是视频文件本身——
  * GitHub 单文件硬上限 100 MB，且服务条款禁止当大文件存储用。
@@ -15,7 +15,7 @@
   var KY = (global.KY = global.KY || {});
 
   KY.sharedResources = {
-    "updatedAt": "2026-09-17 08:16:40",
+    "updatedAt": "2026-09-17 08:43:15",
     "note": "",
     "items": [
       {
@@ -31,7 +31,9 @@
         "note": "",
         "tags": [],
         "chapter": "补充 · 文档内二维码",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r20jk",
@@ -46,7 +48,9 @@
         "note": "",
         "tags": [],
         "chapter": "补充 · 文档内二维码",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r3zy6",
@@ -61,7 +65,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 1 组 · 周一周二学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r901c",
@@ -76,7 +82,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 1 组 · 周一周二学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r48g4",
@@ -91,7 +99,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 1 组 · 周一周二学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r8mn4",
@@ -106,7 +116,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 2 组 · 周一周二学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r6jxw",
@@ -121,7 +133,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 2 组 · 周一周二学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "rf7ms",
@@ -136,7 +150,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 2 组 · 周一周二学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "rag1k",
@@ -151,7 +167,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 2 组 · 周一周二学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r1xw4",
@@ -166,7 +184,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 2 组 · 周一周二学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "rilwo",
@@ -181,7 +201,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 2 组 · 周一周二学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "rei76",
@@ -196,7 +218,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 3 组 · 周一周二学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r6p8w",
@@ -211,7 +235,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 3 组 · 周一周二学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r1xno",
@@ -226,7 +252,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 3 组 · 周一周二学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r1hxw",
@@ -241,7 +269,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 3 组 · 周一周二学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "rc85k",
@@ -256,7 +286,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 4 组 · 周一周二学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "rjq4o",
@@ -271,7 +303,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 4 组 · 周一周二学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r5tpo",
@@ -286,7 +320,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 4 组 · 周一周二学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r4elg",
@@ -304,7 +340,9 @@
         "points": [
           "认识论（实践与认识",
           "真理）"
-        ]
+        ],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r2reg",
@@ -319,7 +357,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 4 组 · 周一周二学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "rjff0",
@@ -334,7 +374,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 4 组 · 周一周二学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "rh0u6",
@@ -349,7 +391,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 5 组 · 周一周二学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r7u3w",
@@ -364,7 +408,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 5 组 · 周一周二学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r5fre",
@@ -379,7 +425,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 5 组 · 周一周二学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r5awo",
@@ -394,7 +442,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 6 组 · 周三周四学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r98oq",
@@ -409,7 +459,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 6 组 · 周三周四学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r3sd8",
@@ -424,7 +476,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 6 组 · 周三周四学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "ri34w",
@@ -439,7 +493,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 6 组 · 周三周四学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r9tj4",
@@ -454,7 +510,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 7 组 · 周一周二学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "rjn3w",
@@ -469,7 +527,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 7 组 · 周一周二学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r6usg",
@@ -484,7 +544,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 7 组 · 周一周二学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r2374",
@@ -499,7 +561,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 7 组 · 周一周二学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r948w",
@@ -514,7 +578,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 8 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "pol.m.ethics",
+        "moduleName": "思想道德与法治"
       },
       {
         "id": "rinxo",
@@ -529,7 +595,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 8 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "pol.m.ethics",
+        "moduleName": "思想道德与法治"
       },
       {
         "id": "r93g",
@@ -544,7 +612,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 8 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "pol.m.ethics",
+        "moduleName": "思想道德与法治"
       },
       {
         "id": "r1s7k",
@@ -559,7 +629,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 8 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "pol.m.ethics",
+        "moduleName": "思想道德与法治"
       },
       {
         "id": "r82yk",
@@ -574,7 +646,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 8 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "pol.m.ethics",
+        "moduleName": "思想道德与法治"
       },
       {
         "id": "r45hr",
@@ -589,7 +663,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 9 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "pol.m.ethics",
+        "moduleName": "思想道德与法治"
       },
       {
         "id": "r8x30",
@@ -604,7 +680,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 9 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "pol.m.ethics",
+        "moduleName": "思想道德与法治"
       },
       {
         "id": "rau6g",
@@ -619,7 +697,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 9 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "pol.m.ethics",
+        "moduleName": "思想道德与法治"
       },
       {
         "id": "r62l7",
@@ -634,7 +714,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 9 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "pol.m.ethics",
+        "moduleName": "思想道德与法治"
       },
       {
         "id": "r1fua",
@@ -649,7 +731,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 10 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "pol.m.history",
+        "moduleName": "中国近现代史纲要"
       },
       {
         "id": "rin8k",
@@ -664,7 +748,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 10 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "pol.m.history",
+        "moduleName": "中国近现代史纲要"
       },
       {
         "id": "r6or0",
@@ -679,7 +765,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 10 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "pol.m.history",
+        "moduleName": "中国近现代史纲要"
       },
       {
         "id": "re0vz",
@@ -694,7 +782,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 10 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "pol.m.history",
+        "moduleName": "中国近现代史纲要"
       },
       {
         "id": "rer1q",
@@ -709,7 +799,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 10 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "pol.m.history",
+        "moduleName": "中国近现代史纲要"
       },
       {
         "id": "r9zgh",
@@ -724,7 +816,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 10 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "pol.m.history",
+        "moduleName": "中国近现代史纲要"
       },
       {
         "id": "rhdo",
@@ -739,7 +833,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 10 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "pol.m.history",
+        "moduleName": "中国近现代史纲要"
       },
       {
         "id": "ri4z4",
@@ -754,7 +850,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 11 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r6uz4",
@@ -769,7 +867,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 11 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r4zl7",
@@ -784,7 +884,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 11 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "ridsk",
@@ -799,7 +901,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 11 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "raxss",
@@ -814,7 +918,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 11 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r6s48",
@@ -829,7 +935,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 11 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r2cl8",
@@ -844,7 +952,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 12 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r37ku",
@@ -859,7 +969,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 12 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "rlcwd",
@@ -874,7 +986,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 12 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r6e8k",
@@ -889,7 +1003,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 12 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r3lzj",
@@ -904,7 +1020,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 12 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "rki7w",
@@ -919,7 +1037,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 12 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "rbdrw",
@@ -934,7 +1054,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 13 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "pol.m.mao",
+        "moduleName": "毛泽东思想与中国特色社会主义理论体系"
       },
       {
         "id": "rh6do",
@@ -949,7 +1071,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 13 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "pol.m.mao",
+        "moduleName": "毛泽东思想与中国特色社会主义理论体系"
       },
       {
         "id": "rgbls",
@@ -964,7 +1088,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 13 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "pol.m.mao",
+        "moduleName": "毛泽东思想与中国特色社会主义理论体系"
       },
       {
         "id": "r98x0",
@@ -979,7 +1105,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 13 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "pol.m.mao",
+        "moduleName": "毛泽东思想与中国特色社会主义理论体系"
       },
       {
         "id": "r6bhb",
@@ -994,7 +1122,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 13 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "pol.m.mao",
+        "moduleName": "毛泽东思想与中国特色社会主义理论体系"
       },
       {
         "id": "rdu68",
@@ -1009,7 +1139,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 13 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "pol.m.mao",
+        "moduleName": "毛泽东思想与中国特色社会主义理论体系"
       },
       {
         "id": "rilrk",
@@ -1024,7 +1156,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 13 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "pol.m.mao",
+        "moduleName": "毛泽东思想与中国特色社会主义理论体系"
       },
       {
         "id": "rl040",
@@ -1039,7 +1173,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 13 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "pol.m.mao",
+        "moduleName": "毛泽东思想与中国特色社会主义理论体系"
       },
       {
         "id": "r538l",
@@ -1054,7 +1190,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 13 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "pol.m.mao",
+        "moduleName": "毛泽东思想与中国特色社会主义理论体系"
       },
       {
         "id": "r8f10",
@@ -1069,7 +1207,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 13 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r3nfs",
@@ -1084,7 +1224,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 13 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "rkbga",
@@ -1099,7 +1241,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 13 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "rfjv0",
@@ -1114,7 +1258,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 13 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r61s8",
@@ -1129,7 +1275,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 13 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r1a70",
@@ -1144,7 +1292,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 13 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r34",
@@ -1159,7 +1309,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 13 组 · 本周学习任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r7i00",
@@ -1174,7 +1326,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 14 组 · 本周六日的任务",
-        "points": []
+        "points": [],
+        "module": "pol.m.ethics",
+        "moduleName": "思想道德与法治"
       },
       {
         "id": "r7ngw",
@@ -1189,7 +1343,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 14 组 · 本周六日的任务",
-        "points": []
+        "points": [],
+        "module": "pol.m.ethics",
+        "moduleName": "思想道德与法治"
       },
       {
         "id": "rbqc8",
@@ -1204,7 +1360,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 14 组 · 本周六日的任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r1ot0",
@@ -1219,7 +1377,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 14 组 · 本周六日的任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "rictj",
@@ -1234,7 +1394,9 @@
         "note": "",
         "tags": [],
         "chapter": "第 14 组 · 本周六日的任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
       },
       {
         "id": "r62ww",
@@ -1249,21 +1411,193 @@
         "note": "",
         "tags": [],
         "chapter": "第 14 组 · 本周六日的任务",
-        "points": []
+        "points": [],
+        "module": "",
+        "moduleName": ""
+      },
+      {
+        "id": "rkvog",
+        "kind": "video",
+        "title": "马原强化01.导论",
+        "subject": "politics",
+        "url": "https://www.acfun.cn/v/ac48528249_1",
+        "code": "",
+        "provider": "",
+        "duration": "",
+        "durationMin": 0,
+        "note": "总论：马克思主义的创立、基本特征与当代价值",
+        "tags": [],
+        "chapter": "",
+        "points": [],
+        "module": "pol.m.marx",
+        "moduleName": "马克思主义基本原理"
+      },
+      {
+        "id": "r6x4g",
+        "kind": "video",
+        "title": "马原强化02.哲学及其基本问题",
+        "subject": "politics",
+        "url": "https://www.acfun.cn/v/ac48528249_2",
+        "code": "",
+        "provider": "",
+        "duration": "",
+        "durationMin": 0,
+        "note": "",
+        "tags": [],
+        "chapter": "",
+        "points": [
+          "辩证唯物论（物质与意识）"
+        ],
+        "module": "pol.m.marx",
+        "moduleName": "马克思主义基本原理"
+      },
+      {
+        "id": "r86rc",
+        "kind": "video",
+        "title": "马原强化03.物质观",
+        "subject": "politics",
+        "url": "https://www.acfun.cn/v/ac48528249_3",
+        "code": "",
+        "provider": "",
+        "duration": "",
+        "durationMin": 0,
+        "note": "",
+        "tags": [],
+        "chapter": "",
+        "points": [
+          "辩证唯物论（物质与意识）"
+        ],
+        "module": "pol.m.marx",
+        "moduleName": "马克思主义基本原理"
+      },
+      {
+        "id": "r4e8g",
+        "kind": "video",
+        "title": "马原强化04.意识观、世界的物质统一性",
+        "subject": "politics",
+        "url": "https://www.acfun.cn/v/ac48528249_4",
+        "code": "",
+        "provider": "",
+        "duration": "",
+        "durationMin": 0,
+        "note": "",
+        "tags": [],
+        "chapter": "",
+        "points": [
+          "辩证唯物论（物质与意识）"
+        ],
+        "module": "pol.m.marx",
+        "moduleName": "马克思主义基本原理"
+      },
+      {
+        "id": "r4lfv",
+        "kind": "video",
+        "title": "马原强化05.两大总特征",
+        "subject": "politics",
+        "url": "https://www.acfun.cn/v/ac48528249_5",
+        "code": "",
+        "provider": "",
+        "duration": "",
+        "durationMin": 0,
+        "note": "",
+        "tags": [],
+        "chapter": "",
+        "points": [
+          "唯物辩证法（联系发展矛盾）"
+        ],
+        "module": "pol.m.marx",
+        "moduleName": "马克思主义基本原理"
+      },
+      {
+        "id": "raq5s",
+        "kind": "video",
+        "title": "马原强化06.对立统一规律",
+        "subject": "politics",
+        "url": "https://www.acfun.cn/v/ac48528249_6",
+        "code": "",
+        "provider": "",
+        "duration": "",
+        "durationMin": 0,
+        "note": "",
+        "tags": [],
+        "chapter": "",
+        "points": [
+          "唯物辩证法（联系发展矛盾）"
+        ],
+        "module": "pol.m.marx",
+        "moduleName": "马克思主义基本原理"
+      },
+      {
+        "id": "rh5gs",
+        "kind": "video",
+        "title": "马原强化07.量变质变规律、否定之否定规律",
+        "subject": "politics",
+        "url": "https://www.acfun.cn/v/ac48528249_7",
+        "code": "",
+        "provider": "",
+        "duration": "",
+        "durationMin": 0,
+        "note": "",
+        "tags": [],
+        "chapter": "",
+        "points": [
+          "唯物辩证法（联系发展矛盾）"
+        ],
+        "module": "pol.m.marx",
+        "moduleName": "马克思主义基本原理"
+      },
+      {
+        "id": "rju74",
+        "kind": "video",
+        "title": "马原强化08.五对基本范畴",
+        "subject": "politics",
+        "url": "https://www.acfun.cn/v/ac48528249_8",
+        "code": "",
+        "provider": "",
+        "duration": "",
+        "durationMin": 0,
+        "note": "",
+        "tags": [],
+        "chapter": "",
+        "points": [
+          "唯物辩证法（联系发展矛盾）"
+        ],
+        "module": "pol.m.marx",
+        "moduleName": "马克思主义基本原理"
+      },
+      {
+        "id": "rl4jk",
+        "kind": "video",
+        "title": "马原强化09.实践",
+        "subject": "politics",
+        "url": "https://www.acfun.cn/v/ac48528249_9",
+        "code": "",
+        "provider": "",
+        "duration": "",
+        "durationMin": 0,
+        "note": "",
+        "tags": [],
+        "chapter": "",
+        "points": [
+          "认识论（实践与认识",
+          "真理）"
+        ],
+        "module": "pol.m.marx",
+        "moduleName": "马克思主义基本原理"
       }
     ]
   };
 
   KY.sharedResourcesMeta = {
-    "builtAt": "2026-09-17 08:16:40",
-    "count": 82,
+    "builtAt": "2026-09-17 08:43:15",
+    "count": 91,
     "byKind": {
-      "video": 81,
+      "video": 90,
       "doc": 1
     },
     "bySubject": {
-      "politics": 82
+      "politics": 91
     },
-    "source": "politics-docx"
+    "source": "video-list"
   };
 })(window);
