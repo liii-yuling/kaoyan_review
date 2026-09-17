@@ -1,56 +1,104 @@
 /*!
  * plan.shared.js —— 共享每日计划（运营者写，使用者看）
  *
- * ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
- *  这是"给她布置每天做什么"的那份文件，跟着网站一起发布。
+ * 本文件由「运营台 → 每日计划 → 导出计划文件」自动生成。
+ * 生成时间：2026-09-17 09:08:21
+ * 天数：1　任务数：4
  *
- *  怎么填（不用手写代码）：
- *    1. 打开网站的「运营台」页
- *    2. 在「每日计划」编辑框里按下面的格式写
- *    3. 点「导出计划文件」→ 得到 plan.shared.js
- *    4. 用它覆盖本文件 → 双击「发布.cmd」→ 上传 dist
- *    5. 她刷新页面就能看到今天的任务，并在页面上打勾
+ * 覆盖项目里的 src/data/plan.shared.js，然后双击「发布.cmd」并上传 dist，
+ * 她刷新页面即可看到今天的任务并在页面上打勾。她的打勾进度存在她自己浏览器里。
  *
- *  文本格式（很简单，看下面示例）：
- *
- *    # 第 1 天 2025-06-01 打基础
- *    - 数学一 极限计算 20 题 @60
- *    - 英语一 阅读 2 篇 @50
- *    - 政治 马原 唯物辩证法 @30
- *    - 背昨天的生词 @15
- *
- *    # 第 2 天 2025-06-02
- *    - 数学一 洛必达 15 题 @45
- *    - 考试 2019 年英语一真题 @180
- *
- *  规则：
- *    · 以 # 开头的行 = 新的一天。可以写「第N天」「YYYY-MM-DD」和标题，顺序随意。
- *    · 以 - 开头的行 = 一条任务。
- *    · 行尾 @数字 = 预计分钟数。
- *    · 任务里出现科目名（数学一/英语一/信号与系统/政治）→ 自动变成"去刷题"任务，
- *      会尽量从文字里找出对应考点，并识别「20 题」这样的题量。
- *    · 以「考试」开头、或写了年份+套卷 → 自动变成"去考试"任务，直接挂到对应套卷。
- *    · 其余就是普通任务，她打勾即可。
- *
- *  格式规范见 SCHEMA.md 第 11 节。
- * ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+ * 格式规范见 SCHEMA.md 第 11 节。手改也行，但不建议。
  */
 (function (global) {
   'use strict';
   var KY = (global.KY = global.KY || {});
 
-  /** 计划内容；由「运营台」导出后覆盖本文件 */
-  KY.sharedPlan = KY.sharedPlan || {
-    updatedAt: '',
-    note: '',
-    plans: []
+  KY.sharedPlan = {
+    "updatedAt": "2026-09-17 09:08:21",
+    "note": "",
+    "plans": [
+      {
+        "id": "plan-2026-09-17",
+        "date": "2026-09-17",
+        "dayIndex": 1,
+        "title": "2026-09-17",
+        "tasks": [
+          {
+            "id": "taxjc",
+            "seq": 0,
+            "text": "数学 线性代数复习第5讲",
+            "kind": "practice",
+            "subject": "math1",
+            "points": [],
+            "count": 0,
+            "paperId": "",
+            "paperTitle": "",
+            "estMin": 120,
+            "inferred": true,
+            "issues": [
+              "没识别出具体考点，她会看到任务但点「去刷题」只能按整科推题"
+            ]
+          },
+          {
+            "id": "t7s",
+            "seq": 0,
+            "text": "英语 21年四篇阅读题目做完并核对答案",
+            "kind": "practice",
+            "subject": "english1",
+            "points": [],
+            "count": 0,
+            "paperId": "",
+            "paperTitle": "",
+            "estMin": 90,
+            "inferred": true,
+            "issues": [
+              "指定的套卷 id「en1-2021」在题库里找不到",
+              "没识别出具体考点，她会看到任务但点「去刷题」只能按整科推题"
+            ]
+          },
+          {
+            "id": "tds7c",
+            "seq": 0,
+            "text": "英语 单词背诵",
+            "kind": "practice",
+            "subject": "english1",
+            "points": [],
+            "count": 0,
+            "paperId": "",
+            "paperTitle": "",
+            "estMin": 30,
+            "inferred": true,
+            "issues": [
+              "没识别出具体考点，她会看到任务但点「去刷题」只能按整科推题"
+            ]
+          },
+          {
+            "id": "thvmw",
+            "seq": 0,
+            "text": "政治 观看史纲部分视频",
+            "kind": "practice",
+            "subject": "politics",
+            "points": [],
+            "count": 0,
+            "paperId": "",
+            "paperTitle": "",
+            "estMin": 60,
+            "inferred": true,
+            "issues": [
+              "没识别出具体考点，她会看到任务但点「去刷题」只能按整科推题"
+            ]
+          }
+        ]
+      }
+    ]
   };
 
-  /** 发布元信息，便于排查"她到底拿到哪一版" */
-  KY.sharedPlanMeta = KY.sharedPlanMeta || {
-    builtAt: '',
-    dayCount: 0,
-    taskCount: 0,
-    source: 'empty'
+  KY.sharedPlanMeta = {
+    "builtAt": "2026-09-17 09:08:21",
+    "dayCount": 1,
+    "taskCount": 4,
+    "withDateCount": 1,
+    "source": "console"
   };
 })(window);
