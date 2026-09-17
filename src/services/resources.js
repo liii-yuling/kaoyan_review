@@ -35,6 +35,8 @@
     { name: '坚果云', re: /jianguoyun\.com/i, code: false },
     { name: '奶牛快传', re: /cowtransfer\.com/i, code: false },
     { name: 'B站', re: /bilibili\.com|b23\.tv/i, code: false },
+    /* 小鹅通：考研机构常用的课程/直播托管平台（xetslk.com、*.xet.citv.cn） */
+    { name: '小鹅通', re: /xetslk\.com|xet\.citv\.cn|xet\.cn/i, code: false },
     { name: 'YouTube', re: /youtube\.com|youtu\.be/i, code: false }
   ];
 
