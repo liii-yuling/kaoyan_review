@@ -54,6 +54,18 @@
   KY.views.console = function (ctx, mount) {
     ui.setTitle('运营台');
 
+    /*
+     * 运营口令门：没解锁就只渲染口令界面，管理功能一概不出现。
+     * 放在视图内部而不是路由层，是为了让 tools/page-check.js 的
+     * "R.add('name', V.view)" 静态分析继续有效。
+     */
+    if (KY.operator && KY.operator.isRequired() && !KY.operator.isUnlocked()) {
+      KY.operator.renderGate(mount, function () {
+        if (KY.router.refresh) KY.router.refresh();
+      });
+      return;
+    }
+
     var profile = KY.store.getProfile();
     // 默认值按实际部署填好；运营台里也可以随时改
     var ghUser = profile.githubUser || 'liii-yuling';
@@ -190,7 +202,12 @@
       '<span>📌 推送 ' + pushShared.items.length + ' 题</span>' +
       '<span>▦ 资料 ' + resSum.count + ' 条</span>' +
       '<span>🔒 口令' + (authCfg.enabled ? '已启用' : '未启用') + '</span>' +
+      '<span>🔑 运营门' + (KY.operator && KY.operator.isRequired()
+        ? (KY.operator.isUnlocked() ? '已解锁' : '未解锁') : '未启用') + '</span>' +
       '<span>🏷 ' + esc(KY.BUILD || 'dev') + '</span>' +
+      '</div>' +
+      '<div class="row" style="margin-top:10px">' +
+      '<button class="btn btn-sm" id="c-op-lock">🔒 退出运营模式（离开这台设备前点一下）</button>' +
       '</div>' +
       (siteUrl
         ? '<div class="con-url">她用的网址：<code>' + esc(siteUrl) + '</code>' +
@@ -600,6 +617,29 @@
     if (copy2) {
       copy2.addEventListener('click', function () {
         U.copyText(siteUrl).then(function () { U.toast('网址已复制', 'success'); });
+      });
+    }
+
+    /* --- 退出运营模式 --- */
+    var opLock = mount.querySelector('#c-op-lock');
+    if (opLock) {
+      opLock.addEventListener('click', function () {
+        if (!KY.operator) return;
+        ui.modal({
+          title: '退出运营模式？',
+          body: '<p style="margin-top:0">侧栏里的「运营台」会立刻隐藏，' +
+            '下次要进来得重新输运营口令。</p>',
+          footer: '<button class="btn" data-modal-close>取消</button>' +
+            '<button class="btn btn-primary" id="op-lock-yes">退出</button>',
+          onMount: function (mask, close) {
+            mask.querySelector('#op-lock-yes').addEventListener('click', function () {
+              close();
+              KY.operator.lock();
+              U.toast('已退出运营模式', 'success');
+              KY.router.go('dashboard');
+            });
+          }
+        });
       });
     }
 

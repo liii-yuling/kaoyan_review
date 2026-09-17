@@ -118,6 +118,12 @@
     R.add('exam', V.exam);
     R.add('bank', V.bank);
     R.add('import', V.import);
+    /*
+     * 运营台的口令门放在视图**内部**（src/ui/views/console.js 开头），
+     * 不在这里包一层匿名函数 —— 那会让 tools/page-check.js 的
+     * 路由静态分析失效（它按 R.add(名字, V.视图) 的形式扫，侧栏入口会被误判成孤儿路由）。
+     * 注意：这句注释里也不要写出那个调用的字面形式，注释同样会被正则扫到。
+     */
     R.add('console', V.console);
     R.add('settings', V.settings);
     R.add('help', V.help);
@@ -170,6 +176,11 @@
       /* 公式渲染：路由切完后把当前视图里的 $...$ 排版出来。
          视图内部重绘（预览、切标签）由 math.js 的 MutationObserver 兜住。 */
       if (KY.math && KY.math.render) KY.math.render();
+      /* 运营入口只在解锁后显示 —— 每次切页都同步一次，防止状态漂移 */
+      if (KY.operator && KY.operator.syncNav) KY.operator.syncNav();
+    });
+    KY.bus.on('operator:changed', function () {
+      if (KY.operator && KY.operator.syncNav) KY.operator.syncNav();
     });
 
     // 5. 路由
@@ -178,6 +189,9 @@
 
     // 5b. 公式渲染：挂在 #view 上，兜住视图内部的重绘
     if (KY.math && KY.math.startObserver) KY.math.startObserver();
+
+    // 5c. 运营入口显隐：没解锁就不显示「运营台」
+    if (KY.operator && KY.operator.syncNav) KY.operator.syncNav();
 
     // 6. 检查有没有新版本（离线 / file:// 打开时静默跳过）
     if (KY.update && KY.update.autoCheck) KY.update.autoCheck();
