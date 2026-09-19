@@ -2,6 +2,6 @@
 (function (global) {
   'use strict';
   var KY = (global.KY = global.KY || {});
-  KY.BUILD = '20260919-092918';
-  KY.BUILD_TIME = '2026-09-19 09:29:18';
+  KY.BUILD = '20260919-093658';
+  KY.BUILD_TIME = '2026-09-19 09:36:58';
 })(window);

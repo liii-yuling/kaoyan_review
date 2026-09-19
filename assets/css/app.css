@@ -1710,6 +1710,68 @@ body.auth-locked .update-banner { display: none !important; }
 }
 
 /* ==================================================================== */
+/* 科目页：本科目视频课（按板块分组）                                    */
+/* ==================================================================== */
+
+.subj-videos {
+  margin-top: 12px;
+  border-top: 1px dashed var(--border);
+  padding-top: 9px;
+  border-radius: 7px;
+  transition: background .3s;
+}
+/* 从「看视频」按钮跳过来时闪一下，让人知道滚到哪了 */
+.subj-videos.is-flash { background: #f2f7ff; }
+
+.sv-head {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-1);
+  padding-left: 8px;
+  border-left: 3px solid var(--brand);
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.sv-head span { font-weight: 400; font-size: 11.5px; color: var(--text-3); }
+
+.sv-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 10px;
+  border-radius: 7px;
+  text-decoration: none;
+  color: var(--text-1);
+  font-size: 13px;
+  border: 1px solid transparent;
+}
+.sv-item:hover { background: #f6f8fc; border-color: var(--border); text-decoration: none; }
+.sv-play {
+  flex: 0 0 auto;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: #fff;
+  font-size: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.sv-title { flex: 1; min-width: 0; }
+.sv-src {
+  font-size: 11px;
+  color: var(--text-3);
+  background: var(--bg-2, #f2f2f4);
+  border-radius: 4px;
+  padding: 1px 7px;
+  white-space: nowrap;
+}
+
+@media print { .subj-videos { break-inside: avoid; } }
+
+/* ==================================================================== */
 /* 资料库：按模块分组（政治视频课归到马原/毛中特/史纲… 下面）            */
 /* ==================================================================== */
 

@@ -337,6 +337,29 @@
     });
   }
 
+  /**
+   * 某科目的**视频**条目，按模块分组。
+   * 科目页靠它实现"按知识点看视频"——不用先去资料库翻。
+   * @returns {Object} { [moduleId]: [item, ...] }
+   */
+  function videosByModule(subject) {
+    var map = Object.create(null);
+    all().forEach(function (it) {
+      if (!it || it.kind !== 'video') return;
+      if (subject && it.subject !== subject) return;
+      var k = it.module || '';
+      (map[k] || (map[k] = [])).push(it);
+    });
+    return map;
+  }
+
+  /** 某科目有多少个视频（用于决定要不要显示入口） */
+  function videoCount(subject) {
+    return all().filter(function (it) {
+      return it && it.kind === 'video' && (!subject || it.subject === subject);
+    }).length;
+  }
+
   /** 按科目分组，用于展示 */
   function grouped(f) {
     var list = filter(f);
@@ -737,6 +760,8 @@
     kindMeta: kindMeta,
     filter: filter,
     grouped: grouped,
+    videosByModule: videosByModule,
+    videoCount: videoCount,
     summary: summary,
     copyText: copyText,
     inferPoints: inferPoints,

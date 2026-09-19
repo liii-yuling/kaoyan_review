@@ -9,6 +9,11 @@
 
   KY.views = KY.views || {};
 
+  /* 模块 id 里有小数点（pol.m.marx），不能直接当 HTML id，换掉 */
+  function vidKey(id) {
+    return String(id || 'other').replace(/[^A-Za-z0-9_-]/g, '-');
+  }
+
   KY.views.subject = function (ctx, mount) {
     var subject = ctx.params[0] || 'english1';
     if (KY.SUBJECTS.indexOf(subject) < 0) {
@@ -26,6 +31,8 @@
     var bankCount = KY.bank.countBySubject(subject);
 
     /* ---- 模块表 ---- */
+    var vmap = (KY.resources && KY.resources.videosByModule)
+      ? KY.resources.videosByModule(subject) : {};
     var rows = [];
     modules.forEach(function (m) {
       var pool = KY.bank.byModule(m.id);
@@ -46,7 +53,8 @@
         weak: weak,
         tested: tested,
         pointCount: m.points.length,
-        wrongCount: wrongCount
+        wrongCount: wrongCount,
+        videoCount: (vmap[m.id] || []).length
       });
     });
 
@@ -69,6 +77,12 @@
         '<div class="row tight">' +
         '<a class="btn btn-sm btn-primary" href="#/review?mode=weak&subject=' + subject + '&module=' + encodeURIComponent(r.module.id) + '">练这个板块</a>' +
         '<a class="btn btn-sm" href="#/bank?subject=' + subject + '&module=' + encodeURIComponent(r.module.id) + '">看题目（' + r.poolSize + '）</a>' +
+        /* 这个板块有配套视频课时，直接给个入口 —— 不用先去资料库里翻。
+           注意用 button + JS 滚动，不能用 href="#xxx"：本站的 # 是路由，
+           写成锚点会被路由当成页面名，跳到"页面不存在"。 */
+        (r.videoCount
+          ? '<button class="btn btn-sm" data-scroll="videos-' + esc(vidKey(r.module.id)) + '">▶ 看视频（' + r.videoCount + '）</button>'
+          : '') +
         (r.wrongCount ? '<a class="btn btn-sm" href="#/wrongbook?subject=' + subject + '">看错题（' + r.wrongCount + '）</a>' : '') +
         '</div>' +
         '</div>';
@@ -101,6 +115,43 @@
     var papers = KY.bank.papers(subject);
     var userCount = KY.bank.bySubject(subject).filter(function (x) { return x.userImported; }).length;
     var videoBound = KY.bank.bySubject(subject).filter(function (x) { return KY.video.hasBvid(x); }).length;
+
+    /* ---- 本科目视频课（按模块分组）---- */
+    var videoHtml = '';
+    var vmap2 = (KY.resources && KY.resources.videosByModule)
+      ? KY.resources.videosByModule(subject) : {};
+    var vKeys = modules.map(function (m) { return m.id; })
+      .filter(function (id) { return vmap2[id]; });
+    Object.keys(vmap2).forEach(function (k) {
+      if (k && vKeys.indexOf(k) < 0) vKeys.push(k);   // 模块认不出来的也显示
+    });
+    if (vmap2['']) vKeys.push('');
+
+    if (vKeys.length) {
+      var vTotal = vKeys.reduce(function (a, k) { return a + vmap2[k].length; }, 0);
+      videoHtml = '<div class="card">' +
+        '<h3 class="card-title">本科目视频课（' + vTotal + '）</h3>' +
+        '<p class="card-sub">按板块分好了，点标题直接看。要加视频去「上传台」粘链接。</p>' +
+        vKeys.map(function (k) {
+          var name = k ? (vmap2[k][0].moduleName || k) : '其他';
+          return '<div class="subj-videos" id="videos-' + esc(vidKey(k)) + '">' +
+            '<div class="sv-head">' + esc(name) +
+            '<span>' + vmap2[k].length + ' 个</span></div>' +
+            vmap2[k].map(function (v) {
+              return '<a class="sv-item" href="' + esc(v.url) +
+                '" target="_blank" rel="noopener" title="' + esc(v.url) + '">' +
+                '<span class="sv-play">▶</span>' +
+                '<span class="sv-title">' + esc(v.title) + '</span>' +
+                (v.provider ? '<span class="sv-src">' + esc(v.provider) + '</span>' : '') +
+                '</a>';
+            }).join('') +
+            '</div>';
+        }).join('') +
+        '<div style="margin-top:12px">' +
+        '<a class="btn btn-sm" href="#/resources?subject=' + subject + '">去资料库看全部</a>' +
+        '</div>' +
+        '</div>';
+    }
 
     mount.innerHTML = '' +
       '<div class="card">' +
@@ -146,6 +197,20 @@
       '<a class="btn btn-sm btn-primary" style="margin-left:6px" href="#/wrongbook?action=upload&subject=' + subject + '">上传错题</a></div>' +
       '</div>' +
       '</div>' +
+      videoHtml +
       '</div>';
+
+    /* 「看视频」按钮：滚到对应板块的视频区（用 JS 而不是锚点，见上面的说明） */
+    mount.addEventListener('click', function (e) {
+      var t = e.target;
+      if (!t || !t.closest) return;
+      var btn = t.closest('[data-scroll]');
+      if (!btn) return;
+      var el = document.getElementById(btn.getAttribute('data-scroll'));
+      if (!el) { KY.util.toast('这个板块暂时没有视频', 'info'); return; }
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      el.classList.add('is-flash');
+      setTimeout(function () { el.classList.remove('is-flash'); }, 1400);
+    });
   };
 })(window);
