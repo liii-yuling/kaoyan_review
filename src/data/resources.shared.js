@@ -2,8 +2,8 @@
  * resources.shared.js —— 共享资料库（运营者维护，使用者查看）
  *
  * 本文件由「运营台 → 资料库 → 导出资料库文件」自动生成。
- * 生成时间：2026-09-19 09:28:10
- * 条目数量：100（视频 99 · 文档 1）
+ * 生成时间：2026-09-19 09:29:15
+ * 条目数量：106（视频 105 · 文档 1）
  *
  * 这里放的是**网盘链接入口**，不是视频文件本身——
  * GitHub 单文件硬上限 100 MB，且服务条款禁止当大文件存储用。
@@ -15,7 +15,7 @@
   var KY = (global.KY = global.KY || {});
 
   KY.sharedResources = {
-    "updatedAt": "2026-09-19 09:28:10",
+    "updatedAt": "2026-09-19 09:29:15",
     "note": "",
     "items": [
       {
@@ -1749,19 +1749,133 @@
         ],
         "module": "pol.m.mao",
         "moduleName": "毛泽东思想与中国特色社会主义理论体系"
+      },
+      {
+        "id": "rpsk",
+        "kind": "video",
+        "title": "10.“五位一体”总体布局-1",
+        "subject": "politics",
+        "url": "https://www.acfun.cn/v/ac42071637_1",
+        "code": "",
+        "provider": "",
+        "duration": "",
+        "durationMin": 0,
+        "note": "",
+        "tags": [],
+        "chapter": "2025考研政治徐涛毛中特【10-15】",
+        "points": [
+          "“五位一体”总体布局与“四个全面”"
+        ],
+        "module": "pol.m.mao",
+        "moduleName": "毛泽东思想与中国特色社会主义理论体系"
+      },
+      {
+        "id": "rfzbi",
+        "kind": "video",
+        "title": "11.“五位一体”总体布局-2",
+        "subject": "politics",
+        "url": "https://www.acfun.cn/v/ac42071637_2",
+        "code": "",
+        "provider": "",
+        "duration": "",
+        "durationMin": 0,
+        "note": "",
+        "tags": [],
+        "chapter": "2025考研政治徐涛毛中特【10-15】",
+        "points": [
+          "“五位一体”总体布局与“四个全面”"
+        ],
+        "module": "pol.m.mao",
+        "moduleName": "毛泽东思想与中国特色社会主义理论体系"
+      },
+      {
+        "id": "raki6",
+        "kind": "video",
+        "title": "12.“五位一体”总体布局-3",
+        "subject": "politics",
+        "url": "https://www.acfun.cn/v/ac42071637_3",
+        "code": "",
+        "provider": "",
+        "duration": "",
+        "durationMin": 0,
+        "note": "",
+        "tags": [],
+        "chapter": "2025考研政治徐涛毛中特【10-15】",
+        "points": [
+          "“五位一体”总体布局与“四个全面”"
+        ],
+        "module": "pol.m.mao",
+        "moduleName": "毛泽东思想与中国特色社会主义理论体系"
+      },
+      {
+        "id": "rqi4",
+        "kind": "video",
+        "title": "13.“五位一体”总体布局-4",
+        "subject": "politics",
+        "url": "https://www.acfun.cn/v/ac42071637_4",
+        "code": "",
+        "provider": "",
+        "duration": "",
+        "durationMin": 0,
+        "note": "",
+        "tags": [],
+        "chapter": "2025考研政治徐涛毛中特【10-15】",
+        "points": [
+          "“五位一体”总体布局与“四个全面”"
+        ],
+        "module": "pol.m.mao",
+        "moduleName": "毛泽东思想与中国特色社会主义理论体系"
+      },
+      {
+        "id": "rabgj",
+        "kind": "video",
+        "title": "14.“四个全面”战略布局",
+        "subject": "politics",
+        "url": "https://www.acfun.cn/v/ac42071637_5",
+        "code": "",
+        "provider": "",
+        "duration": "",
+        "durationMin": 0,
+        "note": "",
+        "tags": [],
+        "chapter": "2025考研政治徐涛毛中特【10-15】",
+        "points": [
+          "“五位一体”总体布局与“四个全面”"
+        ],
+        "module": "pol.m.mao",
+        "moduleName": "毛泽东思想与中国特色社会主义理论体系"
+      },
+      {
+        "id": "rkyea",
+        "kind": "video",
+        "title": "15.新时代的内外条件和领导核心",
+        "subject": "politics",
+        "url": "https://www.acfun.cn/v/ac42071637_6",
+        "code": "",
+        "provider": "",
+        "duration": "",
+        "durationMin": 0,
+        "note": "",
+        "tags": [],
+        "chapter": "2025考研政治徐涛毛中特【10-15】",
+        "points": [
+          "习近平新时代中国特色社会主义思想"
+        ],
+        "module": "pol.m.mao",
+        "moduleName": "毛泽东思想与中国特色社会主义理论体系"
       }
     ]
   };
 
   KY.sharedResourcesMeta = {
-    "builtAt": "2026-09-19 09:28:10",
-    "count": 100,
+    "builtAt": "2026-09-19 09:29:15",
+    "count": 106,
     "byKind": {
-      "video": 99,
+      "video": 105,
       "doc": 1
     },
     "bySubject": {
-      "politics": 100
+      "politics": 106
     },
     "source": "upload-station-video"
   };
