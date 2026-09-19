@@ -2,7 +2,7 @@
  * resources.shared.js —— 共享资料库（运营者维护，使用者查看）
  *
  * 本文件由「运营台 → 资料库 → 导出资料库文件」自动生成。
- * 生成时间：2026-09-17 08:43:15
+ * 生成时间：2026-09-19 09:03:23
  * 条目数量：91（视频 90 · 文档 1）
  *
  * 这里放的是**网盘链接入口**，不是视频文件本身——
@@ -15,7 +15,7 @@
   var KY = (global.KY = global.KY || {});
 
   KY.sharedResources = {
-    "updatedAt": "2026-09-17 08:43:15",
+    "updatedAt": "2026-09-19 09:03:23",
     "note": "",
     "items": [
       {
@@ -1589,7 +1589,7 @@
   };
 
   KY.sharedResourcesMeta = {
-    "builtAt": "2026-09-17 08:43:15",
+    "builtAt": "2026-09-19 09:03:23",
     "count": 91,
     "byKind": {
       "video": 90,
@@ -1598,6 +1598,6 @@
     "bySubject": {
       "politics": 91
     },
-    "source": "video-list"
+    "source": "cleanup"
   };
 })(window);
