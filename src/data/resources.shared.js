@@ -2,8 +2,8 @@
  * resources.shared.js —— 共享资料库（运营者维护，使用者查看）
  *
  * 本文件由「运营台 → 资料库 → 导出资料库文件」自动生成。
- * 生成时间：2026-09-19 09:03:23
- * 条目数量：91（视频 90 · 文档 1）
+ * 生成时间：2026-09-19 09:28:10
+ * 条目数量：100（视频 99 · 文档 1）
  *
  * 这里放的是**网盘链接入口**，不是视频文件本身——
  * GitHub 单文件硬上限 100 MB，且服务条款禁止当大文件存储用。
@@ -15,7 +15,7 @@
   var KY = (global.KY = global.KY || {});
 
   KY.sharedResources = {
-    "updatedAt": "2026-09-19 09:03:23",
+    "updatedAt": "2026-09-19 09:28:10",
     "note": "",
     "items": [
       {
@@ -1584,20 +1584,185 @@
         ],
         "module": "pol.m.marx",
         "moduleName": "马克思主义基本原理"
+      },
+      {
+        "id": "r7cb3",
+        "kind": "video",
+        "title": "01.导论、毛泽东思想及其历史地位",
+        "subject": "politics",
+        "url": "https://www.acfun.cn/v/ac41896150_1",
+        "code": "",
+        "provider": "",
+        "duration": "",
+        "durationMin": 0,
+        "note": "",
+        "tags": [],
+        "chapter": "2025考研政治 徐涛毛中特【1-9】",
+        "points": [],
+        "module": "pol.m.mao",
+        "moduleName": "毛泽东思想与中国特色社会主义理论体系"
+      },
+      {
+        "id": "r6mdm",
+        "kind": "video",
+        "title": "02. 新民主主义革命理论（上）",
+        "subject": "politics",
+        "url": "https://www.acfun.cn/v/ac41896150_2",
+        "code": "",
+        "provider": "",
+        "duration": "",
+        "durationMin": 0,
+        "note": "",
+        "tags": [],
+        "chapter": "2025考研政治 徐涛毛中特【1-9】",
+        "points": [
+          "新民主主义革命理论"
+        ],
+        "module": "pol.m.mao",
+        "moduleName": "毛泽东思想与中国特色社会主义理论体系"
+      },
+      {
+        "id": "rehxg",
+        "kind": "video",
+        "title": "03. 新民主主义革命理论（下）",
+        "subject": "politics",
+        "url": "https://www.acfun.cn/v/ac41896150_3",
+        "code": "",
+        "provider": "",
+        "duration": "",
+        "durationMin": 0,
+        "note": "",
+        "tags": [],
+        "chapter": "2025考研政治 徐涛毛中特【1-9】",
+        "points": [
+          "新民主主义革命理论"
+        ],
+        "module": "pol.m.mao",
+        "moduleName": "毛泽东思想与中国特色社会主义理论体系"
+      },
+      {
+        "id": "rid04",
+        "kind": "video",
+        "title": "04.社会主义改造理论",
+        "subject": "politics",
+        "url": "https://www.acfun.cn/v/ac41896150_4",
+        "code": "",
+        "provider": "",
+        "duration": "",
+        "durationMin": 0,
+        "note": "",
+        "tags": [],
+        "chapter": "2025考研政治 徐涛毛中特【1-9】",
+        "points": [
+          "社会主义改造理论"
+        ],
+        "module": "pol.m.mao",
+        "moduleName": "毛泽东思想与中国特色社会主义理论体系"
+      },
+      {
+        "id": "rgagj",
+        "kind": "video",
+        "title": "05.社会主义建设道路初步探索的理论成果",
+        "subject": "politics",
+        "url": "https://www.acfun.cn/v/ac41896150_5",
+        "code": "",
+        "provider": "",
+        "duration": "",
+        "durationMin": 0,
+        "note": "",
+        "tags": [],
+        "chapter": "2025考研政治 徐涛毛中特【1-9】",
+        "points": [
+          "社会主义建设道路初步探索"
+        ],
+        "module": "pol.m.mao",
+        "moduleName": "毛泽东思想与中国特色社会主义理论体系"
+      },
+      {
+        "id": "rjrou",
+        "kind": "video",
+        "title": "06.邓三科（上）",
+        "subject": "politics",
+        "url": "https://www.acfun.cn/v/ac41896150_6",
+        "code": "",
+        "provider": "",
+        "duration": "",
+        "durationMin": 0,
+        "note": "",
+        "tags": [],
+        "chapter": "2025考研政治 徐涛毛中特【1-9】",
+        "points": [],
+        "module": "pol.m.mao",
+        "moduleName": "毛泽东思想与中国特色社会主义理论体系"
+      },
+      {
+        "id": "rg36w",
+        "kind": "video",
+        "title": "07.邓三科（下）",
+        "subject": "politics",
+        "url": "https://www.acfun.cn/v/ac41896150_7",
+        "code": "",
+        "provider": "",
+        "duration": "",
+        "durationMin": 0,
+        "note": "",
+        "tags": [],
+        "chapter": "2025考研政治 徐涛毛中特【1-9】",
+        "points": [],
+        "module": "pol.m.mao",
+        "moduleName": "毛泽东思想与中国特色社会主义理论体系"
+      },
+      {
+        "id": "r7wgw",
+        "kind": "video",
+        "title": "08.新时代，新思想",
+        "subject": "politics",
+        "url": "https://www.acfun.cn/v/ac41896150_8",
+        "code": "",
+        "provider": "",
+        "duration": "",
+        "durationMin": 0,
+        "note": "",
+        "tags": [],
+        "chapter": "2025考研政治 徐涛毛中特【1-9】",
+        "points": [
+          "习近平新时代中国特色社会主义思想"
+        ],
+        "module": "pol.m.mao",
+        "moduleName": "毛泽东思想与中国特色社会主义理论体系"
+      },
+      {
+        "id": "r61fw",
+        "kind": "video",
+        "title": "09.新时代的总任务",
+        "subject": "politics",
+        "url": "https://www.acfun.cn/v/ac41896150_9",
+        "code": "",
+        "provider": "",
+        "duration": "",
+        "durationMin": 0,
+        "note": "",
+        "tags": [],
+        "chapter": "2025考研政治 徐涛毛中特【1-9】",
+        "points": [
+          "习近平新时代中国特色社会主义思想"
+        ],
+        "module": "pol.m.mao",
+        "moduleName": "毛泽东思想与中国特色社会主义理论体系"
       }
     ]
   };
 
   KY.sharedResourcesMeta = {
-    "builtAt": "2026-09-19 09:03:23",
-    "count": 91,
+    "builtAt": "2026-09-19 09:28:10",
+    "count": 100,
     "byKind": {
-      "video": 90,
+      "video": 99,
       "doc": 1
     },
     "bySubject": {
-      "politics": 91
+      "politics": 100
     },
-    "source": "cleanup"
+    "source": "upload-station-video"
   };
 })(window);
